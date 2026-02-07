@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: rogue-tower-defense-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    labels:
+      - "com.project=rogue-tower-defense"
+      - "com.type=web"
